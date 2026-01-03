@@ -127,8 +127,8 @@ const displayFoodItems = (items) => {
                     </div>
                 </div>
                 <div class="item-actions">
-                    <button class="btn btn-edit" onclick="editFoodItem('${item._id}')">Edit</button>
-                    <button class="btn btn-danger" onclick="deleteFoodItem('${item._id}')">Delete</button>
+                    <button class="btn btn-edit" onclick="editFoodItem('${item.id}')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteFoodItem('${item.id}')">Delete</button>
                 </div>
             </div>
         `;
@@ -214,7 +214,7 @@ const editFoodItem = async (id) => {
         }
         
         const items = await response.json();
-        const item = items.find(i => i._id === id);
+        const item = items.find(i => i.id === id);
         
         if (!item) {
             showError('Food item not found');
@@ -222,7 +222,7 @@ const editFoodItem = async (id) => {
         }
 
         // Populate form with item data
-        editItemIdInput.value = item._id;
+        editItemIdInput.value = item.id;
         nameInput.value = item.name;
         quantityInput.value = item.quantity;
         

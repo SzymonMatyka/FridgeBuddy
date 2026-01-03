@@ -192,8 +192,8 @@ header h1 {
 }
 
 .food-item.expiring-soon {
-    background: #fff8e1;
-    border-left-color: #ffc107;
+    background: #fffacd;
+    border-left-color: #ffd700;
 }
 
 @keyframes pulse {

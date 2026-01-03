@@ -4,6 +4,8 @@ export interface IFoodItem extends Document {
   name: string;
   quantity: number;
   expirationDate: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 const FoodItemSchema: Schema = new Schema({
